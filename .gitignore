@@ -1,0 +1,4 @@
+# Large video files stay in Google Drive (not in this repo)
+assets/videos/
+*.mp4
+.DS_Store
