@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KALYAN — Video Editor &amp; Motion Designer</title>
-  <meta name="description" content="Kalyan — video editor & motion designer. I cut stories that hook the scroll, hold the eye, drive the result.">
-  <meta property="og:title" content="KALYAN — Video Editor & Motion Designer">
-  <meta property="og:description" content="Stories cut to hold attention from the first second.">
+  <title>Kalyan — Video Editor &amp; Motion Designer</title>
+  <meta name="description" content="Kalyan — video editor & motion designer. Turning footage into stories that hold attention.">
+  <meta property="og:title" content="Kalyan — Video Editor & Motion Designer">
+  <meta property="og:description" content="Turning footage into stories that hold attention.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Kalyan","jobTitle":"Video Editor & Motion Designer","email":"hello@example.com","address":{"@type":"PostalAddress","addressCountry":"India"}}</script>
 </head>
@@ -20,216 +20,234 @@
 
   <!-- preloader -->
   <div class="preloader" id="preloader" aria-hidden="true">
+    <span class="preloader__logo">KALYAN</span>
     <span class="preloader__count" id="preloaderCount">00</span>
-    <span class="preloader__label mono">KALYAN — LOADING THE CUT</span>
   </div>
-
-  <!-- cursor -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
 
   <!-- nav -->
   <header class="nav" id="nav">
-    <a href="#top" class="nav__logo" data-hover>KALYAN<span>©</span></a>
+    <a href="#top" class="nav__logo">KALYAN<span>.</span></a>
     <nav class="nav__links" aria-label="Primary">
-      <a href="#work" data-hover>work</a>
-      <a href="#about" data-hover>about</a>
-      <a href="#services" data-hover>services</a>
-      <a href="#contact" data-hover>contact</a>
+      <a href="#about">Who I Am</a>
+      <a href="#work">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contacts</a>
     </nav>
-    <a href="#contact" class="btn btn--green nav__cta" data-hover>let's work</a>
+    <a href="#contact" class="btn btn--dark nav__cta">Get In Touch</a>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </header>
 
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
-    <a href="#work">work</a>
-    <a href="#about">about</a>
-    <a href="#services">services</a>
-    <a href="#experience">experience</a>
-    <a href="#contact">contact</a>
+    <a href="#about">Who I Am</a>
+    <a href="#work">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contacts</a>
   </nav>
 
   <main id="top">
 
     <!-- ===== HERO ===== -->
     <section class="hero">
-      <p class="hero__eyebrow mono">( We are KALYAN )</p>
-      <h1 class="hero__title" id="heroTitle">I cut stories that hook the scroll, hold the eye, drive the result.</h1>
-      <div class="hero__foot">
-        <p class="hero__copy">Marketing isn't about making noise — it's about telling a story people want to watch. I edit for <b>retention first</b>: pace, sound and color moving as one, so the story never lets go.</p>
-        <div class="hero__stack mono">
-          <span>India</span><span>Based</span><span>Video</span><span>Editor</span>
+      <div class="hero__inner">
+        <p class="hero__kicker">Creative Editing Studio</p>
+        <h1 class="hero__title">Turning Footage Into <span class="hero__accent">Stories</span></h1>
+        <div class="hero__tagline"><span id="heroTagline">Short-Form Edits</span></div>
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--yellow">▶&nbsp; Watch My Work</a>
+          <a href="#contact" class="btn btn--ghost">Get In Touch</a>
         </div>
       </div>
-      <a href="#work" class="hero__scroll mono" data-hover>scroll ↓</a>
+      <div class="hero__scroll">Scroll Down <span></span></div>
     </section>
 
-    <!-- ===== MARQUEE ===== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>video editing ✦ motion graphics ✦ color grading ✦ sound design ✦ short-form ✦ podcasts ✦ speed ramps ✦ </span>
-        <span>video editing ✦ motion graphics ✦ color grading ✦ sound design ✦ short-form ✦ podcasts ✦ speed ramps ✦ </span>
-      </div>
-    </div>
-
-    <!-- ===== WORK ===== -->
-    <section class="section work" id="work">
-      <header class="section__head">
-        <h2 class="section__title">( Our latest <em>Réalisations</em> )</h2>
-        <span class="section__count mono">( 09 )</span>
-      </header>
-      <div class="work__grid">
-
-        <article class="work-card" data-category="commercial" data-key="assets/videos/01-english-freelance.mp4">
-          <button class="work-card__btn" aria-label="Watch English Freelance" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/01-english-freelance.jpg" alt="English Freelance" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( ENGLISH FREELANCE )</h3>
-              <p>The project that made clients come back for more.</p>
-              <span class="work-card__tags mono">commercial · 0:43</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="financial" data-key="assets/videos/02-koushik-maridi.mp4">
-          <button class="work-card__btn" aria-label="Watch Koushik Maridi" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/02-koushik-maridi.jpg" alt="Koushik Maridi" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( KOUSHIK MARIDI )</h3>
-              <p>The project that turned finance into a front-row seat.</p>
-              <span class="work-card__tags mono">financial · 1:31</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="financial" data-key="assets/videos/03-2050-monthly-expenses.mp4">
-          <button class="work-card__btn" aria-label="Watch 2050 Monthly Expenses" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/03-2050-monthly-expenses.jpg" alt="2050 Monthly Expenses" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( 2050 MONTHLY EXPENSES )</h3>
-              <p>The project that made budgets impossible to skip.</p>
-              <span class="work-card__tags mono">financial · 0:48</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="faceless" data-key="assets/videos/04-faceless-main-video.mp4">
-          <button class="work-card__btn" aria-label="Watch Faceless Main Video" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/04-faceless-main-video.jpg" alt="Faceless Main Video" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( FACELESS — MAIN )</h3>
-              <p>The project that proved no face is needed for a hook.</p>
-              <span class="work-card__tags mono">faceless · 1:43</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="faceless" data-key="assets/videos/05-jealous.mp4">
-          <button class="work-card__btn" aria-label="Watch Jealous" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/05-jealous.jpg" alt="Jealous" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( JEALOUS )</h3>
-              <p>The project that made storytelling a boarding pass.</p>
-              <span class="work-card__tags mono">faceless · 1:56</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="faceless" data-key="assets/videos/06-social-media-addiction.mp4">
-          <button class="work-card__btn" aria-label="Watch Social Media Addiction" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/06-social-media-addiction.jpg" alt="Social Media Addiction" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( SOCIAL MEDIA ADDICTION )</h3>
-              <p>The project that served the feed a reality check.</p>
-              <span class="work-card__tags mono">faceless · 2:25</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="speed-ramp" data-key="assets/videos/07-speed-ramp-final.mp4">
-          <button class="work-card__btn" aria-label="Watch Speed Ramp Edit" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/07-speed-ramp-final.jpg" alt="Speed Ramp Edit" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( SPEED RAMP )</h3>
-              <p>The project that made us love sleepless nights.</p>
-              <span class="work-card__tags mono">speed ramp · 0:17</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="music" data-key="assets/videos/08-private-song-promo.mp4">
-          <button class="work-card__btn" aria-label="Watch Private Song Promo" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/08-private-song-promo.jpg" alt="Private Song Promo" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( PRIVATE SONG — PROMO )</h3>
-              <p>The project that turned a track into a runway.</p>
-              <span class="work-card__tags mono">music · 0:58</span>
-            </div>
-          </button>
-        </article>
-
-        <article class="work-card" data-category="podcast" data-key="assets/videos/09-podcast-task-10.mp4">
-          <button class="work-card__btn" aria-label="Watch Podcast Task 10" data-hover>
-            <div class="work-card__media"><img src="assets/thumbs/09-podcast-task-10.jpg" alt="Podcast Task 10" loading="lazy"><span class="work-card__watch mono">watch</span></div>
-            <div class="work-card__meta">
-              <h3 class="mono">( PODCAST — TASK 10 )</h3>
-              <p>The project that turned two hours into ten hooks.</p>
-              <span class="work-card__tags mono">podcast · 0:49</span>
-            </div>
-          </button>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== WHO I AM ===== -->
     <section class="section about" id="about">
-      <header class="section__head">
-        <h2 class="section__title">( About the editor )</h2>
-        <span class="section__count mono">( 01 )</span>
-      </header>
       <div class="about__grid">
-        <p class="about__lede reveal">I'm Kalyan — a video editor who treats every frame like it has to earn its place. From punchy short-form edits and faceless content to full podcast cuts and cinematic speed ramps, I edit for <b>retention first</b> — pacing, sound and color working together so the story never lets go.</p>
-        <div class="about__stats">
-          <div class="stat reveal"><strong><span class="counter" data-count="9">9</span>+</strong><span class="mono">projects shipped</span></div>
-          <div class="stat reveal"><strong><span class="counter" data-count="6">6</span></strong><span class="mono">specialties</span></div>
-          <div class="stat reveal"><strong><span class="counter" data-count="100">100</span>%</strong><span class="mono">client focus</span></div>
+        <div class="about__left">
+          <p class="section__kicker">Who I Am</p>
+          <h2 class="section__title">Kalyan means<br><span class="accent">Cut For Attention.</span></h2>
+          <p class="about__sub">Turning footage into stories, from the first frame to the final export.</p>
         </div>
+        <div class="about__right">
+          <p class="about__lede">A video editor and motion designer built on one belief: <b>the best ideas deserve the right cut</b> to bring them to life.</p>
+          <p>I bring pace, sound and color together under one roof — story-first edits, kinetic motion and cinematic grades united by a single idea: make it <i>move</i>, whatever it takes.</p>
+          <p>From punchy short-form and faceless content to full podcast cuts, speed ramps and music promos — if the idea calls for it, I bring it to life on screen.</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong><span class="counter" data-count="9">9</span>+</strong><span>Projects Shipped</span></div>
+        <div class="stat"><strong><span class="counter" data-count="6">6</span></strong><span>Countries Reached<br>Through My Work</span></div>
+        <div class="stat"><strong><span class="counter" data-count="5">5</span>+</strong><span>Years Behind<br>The Cut</span></div>
+        <div class="stat"><strong><span class="counter" data-count="100">100</span>%</strong><span>Clients Satisfied<br>With Us</span></div>
       </div>
     </section>
 
     <!-- ===== SERVICES ===== -->
     <section class="section services" id="services">
-      <header class="section__head">
-        <h2 class="section__title">( What I do )</h2>
-        <span class="section__count mono">( 05 )</span>
-      </header>
-      <ul class="services__list">
-        <li class="services__item reveal" data-hover><span class="mono">/01</span><h3>( Short-form edits )</h3><p>Reels, Shorts and TikToks engineered around hooks, retention curves and shareability.</p></li>
-        <li class="services__item reveal" data-hover><span class="mono">/02</span><h3>( Long-form &amp; podcasts )</h3><p>Full episode cuts, chapter highlights, clean audio and ready-to-post clips.</p></li>
-        <li class="services__item reveal" data-hover><span class="mono">/03</span><h3>( Motion &amp; speed ramps )</h3><p>Kinetic typography, dynamic speed ramps and branded motion that keeps energy high.</p></li>
-        <li class="services__item reveal" data-hover><span class="mono">/04</span><h3>( Color grading )</h3><p>Cinematic looks, skin-tone preservation and mood-driven grades.</p></li>
-        <li class="services__item reveal" data-hover><span class="mono">/05</span><h3>( Sound design )</h3><p>SFX layering, music sync, clean dialogue and mixing that feels premium.</p></li>
-      </ul>
+      <div class="section__head">
+        <p class="section__kicker">What I Do</p>
+        <h2 class="section__title">My Services</h2>
+      </div>
+      <div class="services__grid">
+        <article class="service reveal">
+          <div class="service__icon">01</div>
+          <h3>Short-Form Edits</h3>
+          <p>Reels, Shorts and TikToks engineered around hooks, retention curves and shareability.</p>
+          <a href="#work" class="service__link">See the work →</a>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">02</div>
+          <h3>Motion &amp; Speed Ramps</h3>
+          <p>Kinetic typography, dynamic speed ramps and branded motion that keeps energy high.</p>
+          <a href="#work" class="service__link">See the work →</a>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">03</div>
+          <h3>Color Grading</h3>
+          <p>Cinematic looks, skin-tone preservation and mood-driven grades that feel premium.</p>
+          <a href="#work" class="service__link">See the work →</a>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">04</div>
+          <h3>Sound Design</h3>
+          <p>SFX layering, music sync, clean dialogue and mixing that carries the story.</p>
+          <a href="#work" class="service__link">See the work →</a>
+        </article>
+        <article class="service reveal">
+          <div class="service__icon">05</div>
+          <h3>Podcast &amp; Long-Form</h3>
+          <p>Full episode cuts, chapter highlights, clean audio and ready-to-post clips.</p>
+          <a href="#work" class="service__link">See the work →</a>
+        </article>
+        <article class="service service--cta reveal">
+          <h3>Got an Idea?</h3>
+          <p>Let's make it move.</p>
+          <a href="#contact" class="btn btn--yellow">Let's Talk</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== WORK ===== -->
+    <section class="section work" id="work">
+      <div class="section__head">
+        <div>
+          <p class="section__kicker">Featured Projects</p>
+          <h2 class="section__title">Selected Work</h2>
+        </div>
+        <span class="section__count">( 09 )</span>
+      </div>
+      <div class="work__grid">
+
+        <article class="work-card reveal" data-category="commercial" data-key="assets/videos/01-english-freelance.mp4">
+          <button class="work-card__btn" aria-label="Watch English Freelance">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/01-english-freelance.jpg" alt="English Freelance" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>English Freelance</h3><span>Commercial · 0:43</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="financial" data-key="assets/videos/02-koushik-maridi.mp4">
+          <button class="work-card__btn" aria-label="Watch Koushik Maridi">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/02-koushik-maridi.jpg" alt="Koushik Maridi" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>Koushik Maridi</h3><span>Financial · 1:31</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="financial" data-key="assets/videos/03-2050-monthly-expenses.mp4">
+          <button class="work-card__btn" aria-label="Watch 2050 Monthly Expenses">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/03-2050-monthly-expenses.jpg" alt="2050 Monthly Expenses" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>2050 Monthly Expenses</h3><span>Financial Short · 0:48</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="faceless" data-key="assets/videos/04-faceless-main-video.mp4">
+          <button class="work-card__btn" aria-label="Watch Faceless Main Video">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/04-faceless-main-video.jpg" alt="Faceless Main Video" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>Faceless — Main Video</h3><span>Faceless · 1:43</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="faceless" data-key="assets/videos/05-jealous.mp4">
+          <button class="work-card__btn" aria-label="Watch Jealous">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/05-jealous.jpg" alt="Jealous" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>Jealous</h3><span>Faceless · 1:56</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="faceless" data-key="assets/videos/06-social-media-addiction.mp4">
+          <button class="work-card__btn" aria-label="Watch Social Media Addiction">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/06-social-media-addiction.jpg" alt="Social Media Addiction" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>Social Media Addiction</h3><span>Faceless · 2:25</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="speed-ramp" data-key="assets/videos/07-speed-ramp-final.mp4">
+          <button class="work-card__btn" aria-label="Watch Speed Ramp Edit">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/07-speed-ramp-final.jpg" alt="Speed Ramp Edit" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>Speed Ramp Edit</h3><span>Speed Ramp · 0:17</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="music" data-key="assets/videos/08-private-song-promo.mp4">
+          <button class="work-card__btn" aria-label="Watch Private Song Promo">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/08-private-song-promo.jpg" alt="Private Song Promo" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>Private Song — Promo</h3><span>Music Promo · 0:58</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+        <article class="work-card reveal" data-category="podcast" data-key="assets/videos/09-podcast-task-10.mp4">
+          <button class="work-card__btn" aria-label="Watch Podcast Task 10">
+            <div class="work-card__media" data-parallax><img src="assets/thumbs/09-podcast-task-10.jpg" alt="Podcast Task 10" loading="lazy"><span class="work-card__play">▶</span></div>
+            <div class="work-card__meta"><h3>Podcast — Task 10</h3><span>Podcast · 0:49</span></div>
+            <span class="work-card__explore">Watch the Project</span>
+          </button>
+        </article>
+
+      </div>
     </section>
 
     <!-- ===== EXPERIENCE ===== -->
     <section class="section experience" id="experience">
-      <header class="section__head">
-        <h2 class="section__title">( The timeline )</h2>
-        <span class="section__count mono">( 04 )</span>
-      </header>
+      <div class="section__head">
+        <div>
+          <p class="section__kicker">The Journey</p>
+          <h2 class="section__title">Experience</h2>
+        </div>
+      </div>
       <div class="timeline" id="timeline"></div>
     </section>
 
     <!-- ===== CONTACT ===== -->
     <section class="section contact" id="contact">
-      <p class="contact__aside mono">( Drop us a mail, we don't bite )</p>
-      <h2 class="contact__title">Let's make<br>your ideas <em>shine.</em></h2>
-      <a class="contact__email" id="contactEmail" href="mailto:hello@example.com" data-hover>hello@example.com</a>
-      <div class="contact__socials">
-        <a href="#" class="mono social" data-hover>instagram ↗</a>
-        <a href="#" class="mono social" data-hover>youtube ↗</a>
-        <a href="#" class="mono social" data-hover>linkedin ↗</a>
+      <div class="contact__grid">
+        <div class="contact__left">
+          <p class="section__kicker">Contacts</p>
+          <h2 class="section__title">Got an Idea?<br><span class="accent">Let's Talk</span></h2>
+          <p class="contact__sub">Share your vision. I'll handle the rest.</p>
+          <a class="contact__email" id="contactEmail" href="mailto:hello@example.com">hello@example.com</a>
+          <div class="contact__socials">
+            <a href="#" class="social" data-hover>Instagram ↗</a>
+            <a href="#" class="social" data-hover>YouTube ↗</a>
+            <a href="#" class="social" data-hover>LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="contact__card">
+          <h3>Now Booking</h3>
+          <p>Short-form, podcasts, motion and full production — tell me about your project and I'll get back within 24 hours.</p>
+          <ul>
+            <li>Response within 24h</li>
+            <li>Remote · Worldwide</li>
+            <li>Fast turnarounds</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -237,10 +255,25 @@
 
   <!-- footer -->
   <footer class="footer">
-    <div class="footer__row">
-      <span class="mono">© <span id="year">2026</span> KALYAN</span>
-      <span class="mono footer__love">made with love in India</span>
-      <a href="#top" class="mono" data-hover>back to top ↑</a>
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">KALYAN<span>.</span></span>
+        <p>Video Editor &amp; Motion Designer</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about">Who I Am</a>
+        <a href="#work">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contacts</a>
+      </nav>
+      <div class="footer__mail">
+        <span>Email Me</span>
+        <a href="mailto:hello@example.com" id="footerEmail">hello@example.com</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span>. India. All rights reserved</span>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
@@ -250,14 +283,14 @@
     <div class="modal__box">
       <button class="modal__close" aria-label="Close video">×</button>
       <div class="modal__player" id="modalPlayer"></div>
-      <p class="mono" id="modalCat"></p>
+      <p class="modal__cat" id="modalCat"></p>
       <h3 id="modalTitle"></h3>
     </div>
   </div>
 
   <script src="js/data.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/main.js"></script>
 </body>

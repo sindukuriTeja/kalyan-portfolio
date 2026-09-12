@@ -37,10 +37,11 @@ window.PORTFOLIO_DATA = {
 
   /* ---- Rotating hero words ---- */
   heroWords: [
-    "hook viewers",
-    "keep audiences",
-    "tell stories",
-    "drive results"
+    "Short-Form Edits",
+    "Faceless Content",
+    "Podcast Cuts",
+    "Speed Ramps",
+    "Color & Sound"
   ],
 
   /* ---- Experience / journey timeline ---- */
