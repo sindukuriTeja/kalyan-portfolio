@@ -1,44 +1,24 @@
-# Kalyan — Video Editor & Motion Designer Portfolio
+# Kalyan — 2026 Portfolio
 
-A high-quality, animation-rich portfolio website for Kalyan, Video Editor & Motion Designer.
+A deploy-as-is static portfolio for Kalyan, Video Editor & Motion Designer. No build process or framework is required; it is suitable for GitHub Pages.
 
-## ✨ Features
+## Features
+- Neon dark 2026 visual system: kinetic Syne display type, duotone glows, subtle grid and film grain.
+- Full-height kinetic hero, rotating data-driven tagline, progress indicator, adaptive navigation and clip-path mobile menu.
+- Asymmetric six-skill bento grid, animated skill bars and counters.
+- Nine filterable work cards with lazy thumbnails and Google Drive iframe playback in an accessible modal.
+- Data-driven contact details, social links, hero words, Google Drive URLs and experience timeline in `js/data.js`.
+- GSAP + ScrollTrigger enhancement for hero text, parallax, pinned showreel and timeline progress; usable without JS or the CDN.
+- Reduced-motion support, keyboard Escape modal close, responsive layouts, Open Graph/Twitter metadata and Person JSON-LD.
 
-- Cinematic preloader with progress counter
-- Letter-by-letter hero title reveal + rotating tagline
-- Custom cursor, magnetic buttons, floating gradient blobs, film-grain noise
-- Scroll-reveal animations, animated skill bars, counting stats
-- Tilted infinite marquee, glowing scroll-progress timeline
-- Video modal player (official Google Drive player) with blur backdrop
-- Category filters: All / Commercial / Financial / Faceless / Speed Ramp / Music / Podcast
-- Fully responsive with mobile menu
-- Respects `prefers-reduced-motion`
-
-## 📁 Structure
-
+## Structure
 ```
-kalyan-portfolio/
-├── index.html          # Single-page site
-├── css/style.css       # Theme + all animations
-├── js/data.js          # ← EDIT THIS: personal details, timeline, video links
-├── js/main.js          # Animation engine (no edits needed)
-└── assets/
-    └── thumbs/         # Video thumbnails
+index.html
+css/style.css
+js/data.js       # Edit this file for portfolio content
+js/main.js
+assets/thumbs/   # 01-english-freelance.jpg through 09-podcast-task-10.jpg
 ```
 
-## 🎬 Videos
-
-Videos stream from a public Google Drive folder (kept out of this repo to stay lightweight).
-Edit the `videos` map in `js/data.js` to swap, add, or re-host any video.
-
-## 🚀 Deploy
-
-Pure static site — deploy anywhere:
-
-- **GitHub Pages**: Settings → Pages → deploy from `main` branch (root)
-- **Netlify / Vercel / Cloudflare Pages**: drag & drop or connect the repo
-
-## 📝 Customizing
-
-All personal details (name, email, socials, experience timeline, hero words)
-live in **`js/data.js`** — edit that one file, no HTML changes needed.
+## Deploy
+Push these files to a GitHub repository root and enable **Settings → Pages → Deploy from a branch**. Update email, social URLs, timeline, hero words and Drive preview URLs only in `js/data.js`.
