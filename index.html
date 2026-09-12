@@ -1,53 +1,264 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kalyan — Video Editor &amp; Motion Designer</title>
-  <meta name="description" content="Portfolio of Kalyan — Video Editor & Motion Designer. Retention-first short-form edits, motion, color and sound.">
-  <meta property="og:title" content="Kalyan — Video Editor & Motion Designer"><meta property="og:description" content="Stories cut for attention, rhythm and results."><meta property="og:type" content="website">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KALYAN — Video Editor &amp; Motion Designer</title>
+  <meta name="description" content="Kalyan — video editor & motion designer. I cut stories that hook the scroll, hold the eye, drive the result.">
+  <meta property="og:title" content="KALYAN — Video Editor & Motion Designer">
+  <meta property="og:description" content="Stories cut to hold attention from the first second.">
+  <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Kalyan","jobTitle":"Video Editor & Motion Designer","email":"hello@example.com","address":{"@type":"PostalAddress","addressCountry":"India"}}</script>
 </head>
 <body>
-  <div class="preloader" id="preloader" aria-hidden="true"><strong>KALYAN</strong><div><i id="preloadBar"></i></div><span id="preloadCount">00</span></div>
-  <div class="progress" id="progress" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div>
-  <div class="cursor cursor--dot" id="cursorDot"></div><div class="cursor cursor--ring" id="cursorRing"></div>
-  <header class="nav" id="nav"><a class="logo" href="#hero" aria-label="Kalyan home">K<span>.</span></a>
-    <nav class="nav__links" aria-label="Primary navigation"><a href="#about">01 About</a><a href="#skills">02 Skills</a><a href="#work">03 Work</a><a href="#experience">04 Experience</a><a href="#services">05 Services</a><a href="#contact">06 Contact</a></nav>
-    <a class="nav__cta" href="#contact" data-magnetic>Hire Me <b>↗</b></a><button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+
+  <!-- preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <span class="preloader__count" id="preloaderCount">00</span>
+    <span class="preloader__label mono">KALYAN — LOADING THE CUT</span>
+  </div>
+
+  <!-- cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- nav -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-hover>KALYAN<span>©</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work" data-hover>work</a>
+      <a href="#about" data-hover>about</a>
+      <a href="#services" data-hover>services</a>
+      <a href="#contact" data-hover>contact</a>
+    </nav>
+    <a href="#contact" class="btn btn--green nav__cta" data-hover>let's work</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
   </header>
-  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="#about">01 <em>About</em></a><a href="#skills">02 <em>Skills</em></a><a href="#work">03 <em>Work</em></a><a href="#experience">04 <em>Experience</em></a><a href="#services">05 <em>Services</em></a><a href="#contact">06 <em>Contact</em></a></nav>
-  <main>
-    <section class="hero" id="hero"><div class="grid" aria-hidden="true"></div><div class="blob blob--lime" data-parallax></div><div class="blob blob--violet" data-parallax></div>
-      <div class="hero__content"><p class="eyebrow"><i></i><span id="heroRole">VIDEO EDITOR &amp; MOTION DESIGNER</span></p><h1 id="heroName">KALYAN</h1><p class="hero__copy">I cut stories that <strong id="rotator">hook viewers</strong><b>_</b></p><div class="actions"><a href="#work" class="button button--lime" data-magnetic>Watch selected work <span>→</span></a><a href="#contact" class="button button--line">Start a project</a></div></div>
-      <div class="hero__meta"><span class="mono">LOC <b id="heroLocation">INDIA</b></span><span class="status"><i></i> AVAILABLE FOR WORK</span><a href="#about" class="mono">SCROLL ↓</a></div>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <a href="#work">work</a>
+    <a href="#about">about</a>
+    <a href="#services">services</a>
+    <a href="#experience">experience</a>
+    <a href="#contact">contact</a>
+  </nav>
+
+  <main id="top">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <p class="hero__eyebrow mono">( We are KALYAN )</p>
+      <h1 class="hero__title" id="heroTitle">I cut stories that hook the scroll, hold the eye, drive the result.</h1>
+      <div class="hero__foot">
+        <p class="hero__copy">Marketing isn't about making noise — it's about telling a story people want to watch. I edit for <b>retention first</b>: pace, sound and color moving as one, so the story never lets go.</p>
+        <div class="hero__stack mono">
+          <span>India</span><span>Based</span><span>Video</span><span>Editor</span>
+        </div>
+      </div>
+      <a href="#work" class="hero__scroll mono" data-hover>scroll ↓</a>
     </section>
-    <section class="ticker" aria-label="Capabilities"><div class="ticker__track"><span>VIDEO EDITING ✦ MOTION GRAPHICS ✦ COLOR GRADING ✦ SOUND DESIGN ✦ SHORT-FORM CONTENT ✦ PODCAST EDITING ✦ </span><span>VIDEO EDITING ✦ MOTION GRAPHICS ✦ COLOR GRADING ✦ SOUND DESIGN ✦ SHORT-FORM CONTENT ✦ PODCAST EDITING ✦ </span></div></section>
-    <section class="section about" id="about"><header class="section__head"><span class="mono">01 / ABOUT</span><h2>Built for <i>the replay.</i></h2></header><div class="about__grid"><div class="monogram reveal">K <small class="mono">FRAME / BY / FRAME</small></div><div class="about__text reveal"><p class="lede">I’m Kalyan — a video editor who treats every frame like it has to earn its place.</p><p>From punchy short-form edits and faceless content to podcast cuts and cinematic speed ramps, I edit for <b>retention first</b>: pace, sound and color moving as one.</p><div class="stats"><div><strong class="counter" data-count="9">9</strong><span>Projects shipped</span></div><div><strong class="counter" data-count="6">6</strong><span>Specialties</span></div><div><strong class="counter" data-count="100">100</strong><span>Client focus %</span></div></div></div></div></section>
-    <section class="section skills" id="skills"><header class="section__head"><span class="mono">02 / SKILLS</span><h2>Tools of <i>attention.</i></h2></header><div class="bento">
-      <article class="skill skill--large reveal"><span class="mono">01 / CUT</span><h3>Video<br>Editing</h3><p>Story-first cuts, rhythm and seamless transitions.</p><div class="bar"><i data-width="95"></i></div><b>95%</b></article><article class="skill reveal"><span class="mono">02 / MOVE</span><h3>Motion Graphics</h3><p>Kinetic type and branded motion.</p><div class="bar"><i data-width="90"></i></div><b>90%</b></article><article class="skill reveal"><span class="mono">03 / GRADE</span><h3>Color Grading</h3><p>Cinematic mood, true skin tones.</p><div class="bar"><i data-width="88"></i></div><b>88%</b></article><article class="skill skill--stat reveal"><span class="mono">THE EDITING ROOM</span><strong><span class="counter" data-count="9">9</span>+</strong><p>real stories cut and delivered</p></article><article class="skill reveal"><span class="mono">04 / HEAR</span><h3>Sound Design</h3><p>Sync, SFX and clean dialogue.</p><div class="bar"><i data-width="85"></i></div><b>85%</b></article><article class="skill reveal"><span class="mono">05 / HOOK</span><h3>Short-Form Content</h3><p>Reels &amp; Shorts made for retention.</p><div class="bar"><i data-width="96"></i></div><b>96%</b></article><article class="skill reveal"><span class="mono">06 / LONG</span><h3>Podcast Editing</h3><p>Long-form cleanup and highlights.</p><div class="bar"><i data-width="87"></i></div><b>87%</b></article>
-    </div></section>
-    <section class="showreel" aria-label="Showreel statement"><div class="showreel__inner"><span class="mono">SCROLL TO SCRUB / 2026</span><h2>MAKE<br><i>IT MOVE.</i></h2><p>Fast hooks. Intentional rhythm. Frames that stay.</p></div></section>
-    <section class="section work" id="work"><header class="section__head"><span class="mono">03 / WORK</span><h2>Selected <i>cuts.</i></h2></header><div class="filters" id="filters" aria-label="Filter work"><button class="active" data-filter="all">All</button><button data-filter="commercial">Commercial</button><button data-filter="financial">Financial</button><button data-filter="faceless">Faceless</button><button data-filter="speed-ramp">Speed Ramp</button><button data-filter="music">Music</button><button data-filter="podcast">Podcast</button></div><div class="work__grid" id="workGrid">
-<article class="work-card" data-category="commercial" data-key="assets/videos/01-english-freelance.mp4"><button aria-label="Play English Freelance"><div class="work-card__media"><img src="assets/thumbs/01-english-freelance.jpg" alt="English Freelance edit" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>English Freelance</h3><span class="mono">Commercial</span></div><span class="work-card__duration">0:43</span></div></button></article>
-<article class="work-card" data-category="financial" data-key="assets/videos/02-koushik-maridi.mp4"><button aria-label="Play Koushik Maridi"><div class="work-card__media"><img src="assets/thumbs/02-koushik-maridi.jpg" alt="Koushik Maridi financial edit" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>Koushik Maridi</h3><span class="mono">Financial</span></div><span class="work-card__duration">1:31</span></div></button></article>
-<article class="work-card" data-category="financial" data-key="assets/videos/03-2050-monthly-expenses.mp4"><button aria-label="Play 2050 Monthly Expenses"><div class="work-card__media"><img src="assets/thumbs/03-2050-monthly-expenses.jpg" alt="2050 Monthly Expenses short" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>2050 Monthly Expenses</h3><span class="mono">Financial Short</span></div><span class="work-card__duration">0:48</span></div></button></article>
-<article class="work-card" data-category="faceless" data-key="assets/videos/04-faceless-main-video.mp4"><button aria-label="Play Faceless Main Video"><div class="work-card__media"><img src="assets/thumbs/04-faceless-main-video.jpg" alt="Faceless content main video" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>Faceless — Main Video</h3><span class="mono">Faceless</span></div><span class="work-card__duration">1:43</span></div></button></article>
-<article class="work-card" data-category="faceless" data-key="assets/videos/05-jealous.mp4"><button aria-label="Play Jealous"><div class="work-card__media"><img src="assets/thumbs/05-jealous.jpg" alt="Jealous faceless video" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>Jealous</h3><span class="mono">Faceless</span></div><span class="work-card__duration">1:56</span></div></button></article>
-<article class="work-card" data-category="faceless" data-key="assets/videos/06-social-media-addiction.mp4"><button aria-label="Play Social Media Addiction"><div class="work-card__media"><img src="assets/thumbs/06-social-media-addiction.jpg" alt="Social Media Addiction faceless video" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>Social Media Addiction</h3><span class="mono">Faceless</span></div><span class="work-card__duration">2:25</span></div></button></article>
-<article class="work-card" data-category="speed-ramp" data-key="assets/videos/07-speed-ramp-final.mp4"><button aria-label="Play Speed Ramp Edit"><div class="work-card__media"><img src="assets/thumbs/07-speed-ramp-final.jpg" alt="Speed ramp edit" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>Speed Ramp Edit</h3><span class="mono">Speed Ramp</span></div><span class="work-card__duration">0:17</span></div></button></article>
-<article class="work-card" data-category="music" data-key="assets/videos/08-private-song-promo.mp4"><button aria-label="Play Private Song Promo"><div class="work-card__media"><img src="assets/thumbs/08-private-song-promo.jpg" alt="Private song promo" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>Private Song — Promo</h3><span class="mono">Music Promo</span></div><span class="work-card__duration">0:58</span></div></button></article>
-<article class="work-card" data-category="podcast" data-key="assets/videos/09-podcast-task-10.mp4"><button aria-label="Play Podcast Task 10"><div class="work-card__media"><img src="assets/thumbs/09-podcast-task-10.jpg" alt="Podcast edit" loading="lazy"><span class="work-card__play">▶</span></div><div class="work-card__info"><div><h3>Podcast — Task 10</h3><span class="mono">Podcast</span></div><span class="work-card__duration">0:49</span></div></button></article>
-</div></section>
-    <section class="section experience" id="experience"><header class="section__head"><span class="mono">04 / EXPERIENCE</span><h2>The <i>timeline.</i></h2></header><div class="timeline" id="timeline"><div class="timeline__progress"></div><article><span class="mono">2024 — PRESENT</span><h3>Freelance Video Editor</h3><h4>Self-Employed · Remote</h4><p>Cutting short-form and long-form content for clients across finance, music, podcasts and commercial brands.</p></article><article><span class="mono">2023 — 2024</span><h3>Short-Form &amp; Faceless Content Specialist</h3><h4>Creator Economy Projects</h4><p>Built retention-first faceless content and viral-style shorts.</p></article><article><span class="mono">2022 — 2023</span><h3>Motion &amp; Speed Ramp Editor</h3><h4>Commercial &amp; Music Clients</h4><p>Dynamic speed ramps, kinetic typography and music-synced promos.</p></article><article><span class="mono">2021</span><h3>Started Editing</h3><h4>Learning the Craft</h4><p>First cuts, first clients, first lessons.</p></article></div></section>
-    <section class="section services" id="services"><header class="section__head"><span class="mono">05 / SERVICES</span><h2>What I <i>do.</i></h2></header><div class="services__grid"><article class="service reveal"><span>/01</span><h3>Short-Form Edits</h3><p>Reels, Shorts and TikToks engineered around hooks and shareability.</p></article><article class="service reveal"><span>/02</span><h3>Long-Form &amp; Podcasts</h3><p>Episode cuts, clean audio, highlights and ready-to-post clips.</p></article><article class="service reveal"><span>/03</span><h3>Motion &amp; Speed Ramps</h3><p>Kinetic typography and high-energy dynamic motion.</p></article><article class="service reveal"><span>/04</span><h3>Color &amp; Sound</h3><p>Cinematic grades and layered sound that feel premium.</p></article></div></section>
-    <section class="section contact" id="contact"><span class="mono">06 / CONTACT</span><h2 class="reveal">Have a project?<br><i>Let's make it move.</i></h2><a class="contact__email" id="contactEmail" href="mailto:hello@example.com">hello@example.com</a><div class="socials"><a class="social" href="#">Instagram <b>↗</b></a><a class="social" href="#">YouTube <b>↗</b></a><a class="social" href="#">LinkedIn <b>↗</b></a></div></section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>video editing ✦ motion graphics ✦ color grading ✦ sound design ✦ short-form ✦ podcasts ✦ speed ramps ✦ </span>
+        <span>video editing ✦ motion graphics ✦ color grading ✦ sound design ✦ short-form ✦ podcasts ✦ speed ramps ✦ </span>
+      </div>
+    </div>
+
+    <!-- ===== WORK ===== -->
+    <section class="section work" id="work">
+      <header class="section__head">
+        <h2 class="section__title">( Our latest <em>Réalisations</em> )</h2>
+        <span class="section__count mono">( 09 )</span>
+      </header>
+      <div class="work__grid">
+
+        <article class="work-card" data-category="commercial" data-key="assets/videos/01-english-freelance.mp4">
+          <button class="work-card__btn" aria-label="Watch English Freelance" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/01-english-freelance.jpg" alt="English Freelance" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( ENGLISH FREELANCE )</h3>
+              <p>The project that made clients come back for more.</p>
+              <span class="work-card__tags mono">commercial · 0:43</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="financial" data-key="assets/videos/02-koushik-maridi.mp4">
+          <button class="work-card__btn" aria-label="Watch Koushik Maridi" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/02-koushik-maridi.jpg" alt="Koushik Maridi" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( KOUSHIK MARIDI )</h3>
+              <p>The project that turned finance into a front-row seat.</p>
+              <span class="work-card__tags mono">financial · 1:31</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="financial" data-key="assets/videos/03-2050-monthly-expenses.mp4">
+          <button class="work-card__btn" aria-label="Watch 2050 Monthly Expenses" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/03-2050-monthly-expenses.jpg" alt="2050 Monthly Expenses" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( 2050 MONTHLY EXPENSES )</h3>
+              <p>The project that made budgets impossible to skip.</p>
+              <span class="work-card__tags mono">financial · 0:48</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="faceless" data-key="assets/videos/04-faceless-main-video.mp4">
+          <button class="work-card__btn" aria-label="Watch Faceless Main Video" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/04-faceless-main-video.jpg" alt="Faceless Main Video" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( FACELESS — MAIN )</h3>
+              <p>The project that proved no face is needed for a hook.</p>
+              <span class="work-card__tags mono">faceless · 1:43</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="faceless" data-key="assets/videos/05-jealous.mp4">
+          <button class="work-card__btn" aria-label="Watch Jealous" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/05-jealous.jpg" alt="Jealous" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( JEALOUS )</h3>
+              <p>The project that made storytelling a boarding pass.</p>
+              <span class="work-card__tags mono">faceless · 1:56</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="faceless" data-key="assets/videos/06-social-media-addiction.mp4">
+          <button class="work-card__btn" aria-label="Watch Social Media Addiction" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/06-social-media-addiction.jpg" alt="Social Media Addiction" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( SOCIAL MEDIA ADDICTION )</h3>
+              <p>The project that served the feed a reality check.</p>
+              <span class="work-card__tags mono">faceless · 2:25</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="speed-ramp" data-key="assets/videos/07-speed-ramp-final.mp4">
+          <button class="work-card__btn" aria-label="Watch Speed Ramp Edit" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/07-speed-ramp-final.jpg" alt="Speed Ramp Edit" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( SPEED RAMP )</h3>
+              <p>The project that made us love sleepless nights.</p>
+              <span class="work-card__tags mono">speed ramp · 0:17</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="music" data-key="assets/videos/08-private-song-promo.mp4">
+          <button class="work-card__btn" aria-label="Watch Private Song Promo" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/08-private-song-promo.jpg" alt="Private Song Promo" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( PRIVATE SONG — PROMO )</h3>
+              <p>The project that turned a track into a runway.</p>
+              <span class="work-card__tags mono">music · 0:58</span>
+            </div>
+          </button>
+        </article>
+
+        <article class="work-card" data-category="podcast" data-key="assets/videos/09-podcast-task-10.mp4">
+          <button class="work-card__btn" aria-label="Watch Podcast Task 10" data-hover>
+            <div class="work-card__media"><img src="assets/thumbs/09-podcast-task-10.jpg" alt="Podcast Task 10" loading="lazy"><span class="work-card__watch mono">watch</span></div>
+            <div class="work-card__meta">
+              <h3 class="mono">( PODCAST — TASK 10 )</h3>
+              <p>The project that turned two hours into ten hooks.</p>
+              <span class="work-card__tags mono">podcast · 0:49</span>
+            </div>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section about" id="about">
+      <header class="section__head">
+        <h2 class="section__title">( About the editor )</h2>
+        <span class="section__count mono">( 01 )</span>
+      </header>
+      <div class="about__grid">
+        <p class="about__lede reveal">I'm Kalyan — a video editor who treats every frame like it has to earn its place. From punchy short-form edits and faceless content to full podcast cuts and cinematic speed ramps, I edit for <b>retention first</b> — pacing, sound and color working together so the story never lets go.</p>
+        <div class="about__stats">
+          <div class="stat reveal"><strong><span class="counter" data-count="9">9</span>+</strong><span class="mono">projects shipped</span></div>
+          <div class="stat reveal"><strong><span class="counter" data-count="6">6</span></strong><span class="mono">specialties</span></div>
+          <div class="stat reveal"><strong><span class="counter" data-count="100">100</span>%</strong><span class="mono">client focus</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section services" id="services">
+      <header class="section__head">
+        <h2 class="section__title">( What I do )</h2>
+        <span class="section__count mono">( 05 )</span>
+      </header>
+      <ul class="services__list">
+        <li class="services__item reveal" data-hover><span class="mono">/01</span><h3>( Short-form edits )</h3><p>Reels, Shorts and TikToks engineered around hooks, retention curves and shareability.</p></li>
+        <li class="services__item reveal" data-hover><span class="mono">/02</span><h3>( Long-form &amp; podcasts )</h3><p>Full episode cuts, chapter highlights, clean audio and ready-to-post clips.</p></li>
+        <li class="services__item reveal" data-hover><span class="mono">/03</span><h3>( Motion &amp; speed ramps )</h3><p>Kinetic typography, dynamic speed ramps and branded motion that keeps energy high.</p></li>
+        <li class="services__item reveal" data-hover><span class="mono">/04</span><h3>( Color grading )</h3><p>Cinematic looks, skin-tone preservation and mood-driven grades.</p></li>
+        <li class="services__item reveal" data-hover><span class="mono">/05</span><h3>( Sound design )</h3><p>SFX layering, music sync, clean dialogue and mixing that feels premium.</p></li>
+      </ul>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section experience" id="experience">
+      <header class="section__head">
+        <h2 class="section__title">( The timeline )</h2>
+        <span class="section__count mono">( 04 )</span>
+      </header>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <p class="contact__aside mono">( Drop us a mail, we don't bite )</p>
+      <h2 class="contact__title">Let's make<br>your ideas <em>shine.</em></h2>
+      <a class="contact__email" id="contactEmail" href="mailto:hello@example.com" data-hover>hello@example.com</a>
+      <div class="contact__socials">
+        <a href="#" class="mono social" data-hover>instagram ↗</a>
+        <a href="#" class="mono social" data-hover>youtube ↗</a>
+        <a href="#" class="mono social" data-hover>linkedin ↗</a>
+      </div>
+    </section>
+
   </main>
-  <footer><span class="mono">© <span id="year"></span> KALYAN / VIDEO EDITOR</span><a href="#hero" class="mono">BACK TO TOP ↑</a></footer>
-  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal__backdrop" aria-label="Close video"></button><div class="modal__box"><button class="modal__close" aria-label="Close video">×</button><div class="modal__player" id="modalPlayer"></div><p class="mono" id="modalCat"></p><h3 id="modalTitle"></h3></div></div>
-  <script src="js/data.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="js/main.js"></script>
-</body></html>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer__row">
+      <span class="mono">© <span id="year">2026</span> KALYAN</span>
+      <span class="mono footer__love">made with love in India</span>
+      <a href="#top" class="mono" data-hover>back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- video modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__backdrop" aria-label="Close video"></button>
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Close video">×</button>
+      <div class="modal__player" id="modalPlayer"></div>
+      <p class="mono" id="modalCat"></p>
+      <h3 id="modalTitle"></h3>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
