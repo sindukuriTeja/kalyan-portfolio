@@ -43,6 +43,18 @@
   };
   if (reduced || !hasGsap) { showAll(); }
 
+  /* ---------- hero background video: respect reduced motion ---------- */
+  const heroBgVideo = $('.hero-bg-video');
+  if (heroBgVideo) {
+    if (reduced) {
+      heroBgVideo.pause();
+      heroBgVideo.removeAttribute('autoplay');
+    } else {
+      const p = heroBgVideo.play();
+      if (p && p.catch) p.catch(() => { /* autoplay blocked: poster stays visible */ });
+    }
+  }
+
   /* ---------- [1] word-scrub on [animate] sections (FTI script 11) ---------- */
   if (!reduced && hasGsap && hasSplit) {
     gsap.registerPlugin(ScrollTrigger);

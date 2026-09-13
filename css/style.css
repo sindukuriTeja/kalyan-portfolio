@@ -79,6 +79,9 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.02em}
 /* ---------- hero (250vh section, sticky 100svh, char explosion on scroll) ---------- */
 .hero-section{z-index:2;position:relative;min-height:250vh;color:var(--color--typography-gray)}
 .hero-sticky{justify-content:center;align-items:center;height:100svh;display:flex;position:sticky;top:0;overflow:hidden}
+.hero-bg{z-index:1;position:absolute;inset:0;overflow:hidden}
+.hero-bg-video{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-bg-overlay{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 10%,rgba(5,5,5,.25) 0%,rgba(5,5,5,.72) 55%,#050505 100%)}
 .hero-content{z-index:4;justify-content:flex-start;align-items:center;position:relative;display:flex;flex-direction:column;gap:2.5rem;text-align:center;padding:0 2rem}
 .scroller-text h1{color:var(--color--typography-white);text-transform:uppercase;margin:0;font-size:3.4375rem;font-weight:700;line-height:100%}
 .scroller-text.start-hidden{font-size:2.7rem}
@@ -222,6 +225,7 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.02em}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .scroll-line:after{animation:none}
+  .hero-bg-video{animation:none}
   .hero-section{min-height:100svh}
   .scroller-text.start-hidden{opacity:1}
   .hero-actions{opacity:1}
