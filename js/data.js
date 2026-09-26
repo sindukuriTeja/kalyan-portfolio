@@ -15,10 +15,10 @@ window.PORTFOLIO_DATA = {
      Leave as "" to show the letter avatar instead. */
   avatarImage: "assets/profile.jpg",
 
-  /* ---- Contact (TODO: replace with real details) ---- */
-  email: "hello@example.com",
-  instagram: "https://instagram.com/",
-  instagramHandle: "@kalyan.arburi",
+  /* ---- Contact ---- */
+  email: "kalyanclicks00@gmail.com",
+  instagram: "https://www.instagram.com/kalyanabburi0",
+  instagramHandle: "@kalyanabburi0",
 
   /* ---- Main featured video (big player in the showcase) ----
      Must be one of the video keys below. */
