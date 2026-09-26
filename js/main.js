@@ -46,24 +46,12 @@
     if (instaText && D.instagramHandle) instaText.textContent = D.instagramHandle;
   }
 
-  /* ---------- main featured video ---------- */
+  /* ---------- player helper ---------- */
   function playerHTML(v) {
     if (!v) return "";
     return v.type === "iframe"
-      ? `<iframe src="${v.url}" title="Main video" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+      ? `<iframe src="${v.url}" title="Video" allow="autoplay; fullscreen" allowfullscreen></iframe>`
       : `<video src="${v.url}" controls playsinline></video>`;
-  }
-  const mainPlayer = $("#mainPlayer");
-  if (mainPlayer && D.mainVideo && D.videos) {
-    const v = D.videos[D.mainVideo];
-    mainPlayer.innerHTML = playerHTML(v);
-    const titleEl = $("#mainPlayerTitle");
-    if (titleEl) {
-      const item = (D.work || []).find((w) => w.video === D.mainVideo);
-      titleEl.textContent = item ? item.title : "Main video";
-    }
-    const subEl = $("#mainVideoSub");
-    if (subEl && D.mainVideoSub) subEl.textContent = D.mainVideoSub;
   }
 
   /* ---------- category tabs ---------- */
