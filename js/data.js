@@ -1,12 +1,12 @@
 /* ============================================================
-   KALYAN ARBURI — PORTFOLIO DATA
+   KALYAN ABBURI — PORTFOLIO DATA
    Edit this file to update personal details, the main video,
    categories and portfolio videos without touching the HTML.
    ============================================================ */
 
 window.PORTFOLIO_DATA = {
   /* ---- Personal details ---- */
-  name: "Kalyan Arburi",
+  name: "Kalyan Abburi",
   role: "Video Editor & Motion Designer",
   tagline: "UNIQUE",
   bio: "Unique video editor & motion designer — turning raw footage into stories people watch to the end.",

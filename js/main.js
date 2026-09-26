@@ -1,5 +1,5 @@
 /* ============================================================
-   KALYAN ARBURI — portfolio
+   KALYAN ABBURI — portfolio
    Hydrates the DOM from js/data.js and wires up interactions:
    mobile menu, sticky header, scroll reveal, the main featured
    video, the category filter, and the portfolio video modal.
