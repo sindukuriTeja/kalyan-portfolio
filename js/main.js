@@ -1,8 +1,7 @@
 /* ============================================================
    KALYAN ABBURI — portfolio
    Hydrates the DOM from js/data.js and wires up interactions:
-   mobile menu, sticky header, scroll reveal, the main featured
-   video, the category filter, and the portfolio video modal.
+   mobile menu, sticky header, smooth scroll, and the END button.
    ============================================================ */
 (function () {
   "use strict";
@@ -46,78 +45,9 @@
     if (instaText && D.instagramHandle) instaText.textContent = D.instagramHandle;
   }
 
-  /* ---------- main featured video ---------- */
-  function playerHTML(v) {
-    if (!v) return "";
-    return v.type === "iframe"
-      ? `<iframe src="${v.url}" title="Main video" allow="autoplay; fullscreen" allowfullscreen></iframe>`
-      : `<video src="${v.url}" controls playsinline></video>`;
-  }
-  const mainPlayer = $("#mainPlayer");
-  if (mainPlayer && D.mainVideo && D.videos) {
-    const v = D.videos[D.mainVideo];
-    mainPlayer.innerHTML = playerHTML(v);
-    const titleEl = $("#mainPlayerTitle");
-    if (titleEl) {
-      const item = (D.work || []).find((w) => w.video === D.mainVideo);
-      titleEl.textContent = item ? item.title : "Main video";
-    }
-    const subEl = $("#mainVideoSub");
-    if (subEl && D.mainVideoSub) subEl.textContent = D.mainVideoSub;
-  }
-
-  /* ---------- category tabs ---------- */
-  const cats = [];
-  (D.work || []).forEach((w) => {
-    if (!cats.includes(w.cat)) cats.push(w.cat);
-  });
-  const catTabs = $("#catTabs");
-  if (catTabs && cats.length) {
-    catTabs.innerHTML =
-      `<button class="cat-tab active" data-cat="all" role="tab" aria-selected="true">All</button>` +
-      cats
-        .map(
-          (c) =>
-            `<button class="cat-tab" data-cat="${c}" role="tab" aria-selected="false">${c}</button>`
-        )
-        .join("");
-  }
-
-  /* ---------- portfolio grid ---------- */
-  const workGrid = $("#workGrid");
-  if (workGrid && D.work) {
-    workGrid.innerHTML = D.work
-      .map(
-        (w) => `
-      <div class="work-card" data-video="${w.video}" data-cat="${w.cat}" data-title="${w.title}" role="button" tabindex="0" aria-label="Play ${w.title}">
-        <div class="work-thumb">
-          <img src="assets/thumbs/${w.video.split("/").pop().replace(".mp4", ".jpg")}" alt="${w.title}" loading="lazy">
-          <div class="work-play"><span>▶</span></div>
-        </div>
-        <div class="work-meta"><h3>${w.title}</h3><div class="cat">${w.cat}</div></div>
-      </div>`
-      )
-      .join("");
-  }
-
-  /* ---------- category filtering ---------- */
-  function applyFilter(cat) {
-    $$(".work-card").forEach((card) => {
-      const show = cat === "all" || card.dataset.cat === cat;
-      card.classList.toggle("is-hidden", !show);
-    });
-  }
-  if (catTabs) {
-    catTabs.addEventListener("click", (e) => {
-      const btn = e.target.closest(".cat-tab");
-      if (!btn) return;
-      $$(".cat-tab", catTabs).forEach((t) => {
-        t.classList.toggle("active", t === btn);
-        t.setAttribute("aria-selected", String(t === btn));
-      });
-      applyFilter(btn.dataset.cat);
-    });
-  }
+  /* ---------- footer tagline ---------- */
+  const footerLine = $("#footerLine");
+  if (footerLine && D.footerLine) footerLine.textContent = D.footerLine;
 
   /* ---------- mobile menu ---------- */
   const menuButton = $("#menuButton");
@@ -193,42 +123,4 @@
       anims.forEach((a) => io2.observe(a));
     }
   }
-
-  /* ---------- video modal ---------- */
-  const modal = $("#modal");
-  const modalPlayer = $("#modalPlayer");
-  const modalTitle = $("#modalTitle");
-  function openModal(videoKey, title) {
-    const v = D.videos && D.videos[videoKey];
-    if (!v || !modal) return;
-    modalPlayer.innerHTML = playerHTML(v);
-    if (modalTitle) modalTitle.textContent = title;
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
-  function closeModal() {
-    if (!modal) return;
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    modalPlayer.innerHTML = "";
-    document.body.style.overflow = "";
-  }
-  $$(".work-card").forEach((card) => {
-    const open = () => openModal(card.dataset.video, card.dataset.title);
-    card.addEventListener("click", open);
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        open();
-      }
-    });
-  });
-  const backdrop = $(".modal__backdrop");
-  const closeBtn = $(".modal__close");
-  if (backdrop) backdrop.addEventListener("click", closeModal);
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal && modal.classList.contains("open")) closeModal();
-  });
 })();

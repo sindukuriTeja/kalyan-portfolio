@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kalyan Abburi — Video Editor &amp; Motion Designer</title>
-  <meta name="description" content="Kalyan Abburi — unique video editor & motion designer. Portfolio of short-form, faceless, music and podcast edits.">
+  <meta name="description" content="Kalyan Abburi — unique video editor & motion designer.">
   <meta property="og:title" content="Kalyan Abburi — Video Editor & Motion Designer">
-  <meta property="og:description" content="Unique video editing & motion design — see the portfolio.">
+  <meta property="og:description" content="Unique video editing & motion design.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,8 +28,6 @@
     <div class="container header-inner">
       <a href="#top" class="logo">Kalyan <span>Abburi</span></a>
       <nav class="navlinks" aria-label="Primary">
-        <a class="navlink" href="#showcase">Showcase</a>
-        <a class="navlink" href="#portfolio">Portfolio</a>
         <a class="navlink" href="#end">Contact</a>
       </nav>
       <a href="mailto:kalyanclicks00@gmail.com" class="button is-header" id="hireMeHeader">
@@ -46,8 +44,6 @@
   <!-- mobile menu -->
   <div class="menu-wrap" id="menuWrap" aria-hidden="true">
     <nav class="menu-links" aria-label="Mobile">
-      <a class="menu-link" href="#showcase">Showcase</a>
-      <a class="menu-link" href="#portfolio">Portfolio</a>
       <a class="menu-link" href="#end">Contact</a>
     </nav>
     <div class="menu-foot">Kalyan Abburi — Video Editor</div>
@@ -55,7 +51,7 @@
 
   <main id="top">
 
-    <!-- ===== PROFILE (top of wireframe) ===== -->
+    <!-- ===== PROFILE ===== -->
     <section class="profile-hero">
       <div class="hero-band"></div>
       <div class="container">
@@ -88,52 +84,9 @@
       </div>
     </section>
 
-    <!-- ===== MAIN VIDEO SHOWCASE (middle of wireframe) ===== -->
-    <section class="section showcase-section" id="showcase">
-      <div class="container">
-        <h2 class="section-title" data-animate>PORTFOLIO.</h2>
-        <p class="section-sub" id="mainVideoSub"></p>
-        <div class="showcase-grid" data-animate>
-          <div class="app-logo app-logo--pr" title="Adobe Premiere Pro">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect width="64" height="64" rx="12" fill="#00005B"/>
-              <rect x="1.5" y="1.5" width="61" height="61" rx="11" fill="none" stroke="#9999FF" stroke-width="3"/>
-              <text x="32" y="43" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="26" fill="#9999FF">Pr</text>
-            </svg>
-            <span>Premiere Pro</span>
-          </div>
-
-          <div class="main-player">
-            <div class="main-player-frame" id="mainPlayer"></div>
-            <div class="main-player-title" id="mainPlayerTitle"></div>
-          </div>
-
-          <div class="app-logo app-logo--ae" title="Adobe After Effects">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect width="64" height="64" rx="12" fill="#1D052C"/>
-              <rect x="1.5" y="1.5" width="61" height="61" rx="11" fill="none" stroke="#9999FF" stroke-width="3"/>
-              <text x="32" y="43" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="26" fill="#9999FF">Ae</text>
-            </svg>
-            <span>After Effects</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PORTFOLIO GRID WITH CATEGORIES (bottom of wireframe) ===== -->
-    <section class="section portfolio-section" id="portfolio">
-      <div class="container">
-        <div class="portfolio-head" data-animate>
-          <h2 class="section-title">Category</h2>
-          <div class="cat-tabs" id="catTabs" role="tablist" aria-label="Portfolio categories"></div>
-        </div>
-        <div class="work-grid" id="workGrid"></div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ===== FOOTER (bottom of wireframe: line + END) ===== -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer" id="end">
     <div class="container footer-inner">
       <p class="footer-line" id="footerLine"></p>
@@ -147,16 +100,6 @@
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
-
-  <!-- video modal -->
-  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button class="modal__backdrop" aria-label="Close video"></button>
-    <div class="modal__box">
-      <button class="modal__close" aria-label="Close video">×</button>
-      <div class="modal__player" id="modalPlayer"></div>
-      <h3 id="modalTitle"></h3>
-    </div>
-  </div>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
