@@ -18,7 +18,13 @@
 
   /* ---------- profile: avatar, bio, contact links ---------- */
   const avatar = $("#avatar");
-  if (avatar && D.avatarInitial) avatar.textContent = D.avatarInitial;
+  if (avatar) {
+    if (D.avatarImage) {
+      avatar.innerHTML = `<img src="${D.avatarImage}" alt="${D.name || "Profile"}" onerror="this.remove()">`;
+    } else if (D.avatarInitial) {
+      avatar.textContent = D.avatarInitial;
+    }
+  }
 
   const bio = $("#bio");
   if (bio && D.bio) bio.textContent = D.bio;

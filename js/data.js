@@ -11,6 +11,9 @@ window.PORTFOLIO_DATA = {
   tagline: "UNIQUE",
   bio: "Unique video editor & motion designer — turning raw footage into stories people watch to the end.",
   avatarInitial: "K",
+  /* Profile photo — put your photo at assets/profile.jpg (square works best).
+     Leave as "" to show the letter avatar instead. */
+  avatarImage: "assets/profile.jpg",
 
   /* ---- Contact (TODO: replace with real details) ---- */
   email: "hello@example.com",
