@@ -88,6 +88,17 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.15}
 .section-title{font-size:2rem;font-weight:800;margin-bottom:.5rem;letter-spacing:.01em}
 .section-sub{color:var(--muted);margin-bottom:2.25rem}
 
+/* ---------- main video showcase (wireframe middle) ---------- */
+.showcase-section{background:var(--surface)}
+.showcase-grid{display:grid;grid-template-columns:170px 1fr 170px;gap:1.5rem;align-items:center}
+.app-logo{display:flex;flex-direction:column;align-items:center;gap:.7rem;text-align:center}
+.app-logo svg{width:84px;height:84px;border-radius:16px;box-shadow:var(--shadow-lg)}
+.app-logo span{font:700 .95rem var(--display);color:var(--ink-soft)}
+.main-player{min-width:0}
+.main-player-frame{background:#000;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.main-player-frame iframe,.main-player-frame video{width:100%;height:100%;border:0;display:block}
+.main-player-title{margin-top:.9rem;text-align:center;font:700 1.05rem var(--display);color:var(--ink)}
+
 /* ---------- portfolio + categories (wireframe bottom) ---------- */
 .portfolio-head{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem}
 .portfolio-head .section-title{margin-bottom:0}
@@ -140,6 +151,12 @@ html.js [data-animate].in{opacity:1;transform:none}
 @media(max-width:1000px){
   .navlinks,.button.is-header{display:none}
   .menu-button{display:block}
+  .showcase-grid{grid-template-columns:1fr;gap:2rem}
+  .app-logo{order:2}
+  .app-logo--pr{order:3}
+  .app-logo--ae{order:4}
+  .main-player{order:1}
+  .app-logo svg{width:64px;height:64px}
   .work-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){

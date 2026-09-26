@@ -54,6 +54,17 @@
       : `<video src="${v.url}" controls playsinline></video>`;
   }
 
+  /* ---------- main featured video ---------- */
+  const mainPlayer = $("#mainPlayer");
+  if (mainPlayer && D.mainVideo && D.videos) {
+    const v = D.videos[D.mainVideo];
+    mainPlayer.innerHTML = playerHTML(v);
+    const titleEl = $("#mainPlayerTitle");
+    if (titleEl) titleEl.textContent = "Podcast — Task 10";
+    const subEl = $("#mainVideoSub");
+    if (subEl && D.mainVideoSub) subEl.textContent = D.mainVideoSub;
+  }
+
   /* ---------- category tabs ---------- */
   const cats = [];
   (D.work || []).forEach((w) => {
