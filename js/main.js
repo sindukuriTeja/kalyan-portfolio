@@ -1,8 +1,8 @@
 /* ============================================================
-   AASIL KHAN — Fiverr style site
+   KALYAN ARBURI — portfolio
    Hydrates the DOM from js/data.js and wires up interactions:
-   mobile menu, sticky header, animated counters, scroll reveal,
-   and the portfolio video modal.
+   mobile menu, sticky header, scroll reveal, the main featured
+   video, the category filter, and the portfolio video modal.
    ============================================================ */
 (function () {
   "use strict";
@@ -16,47 +16,74 @@
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* ---------- about: track record + body + clients + skills ---------- */
-  const trackList = $("#trackList");
-  if (trackList && D.about) {
-    trackList.innerHTML = D.about.map((t) => `<li>${t}</li>`).join("");
+  /* ---------- profile: avatar, bio, contact links ---------- */
+  const avatar = $("#avatar");
+  if (avatar && D.avatarInitial) avatar.textContent = D.avatarInitial;
+
+  const bio = $("#bio");
+  if (bio && D.bio) bio.textContent = D.bio;
+
+  if (D.email) {
+    const mailLink = $("#mailLink");
+    if (mailLink) mailLink.setAttribute("href", "mailto:" + D.email);
+    const mailText = $("#mailText");
+    if (mailText) mailText.textContent = D.email;
+    ["#hireMeBtn", "#hireMeHeader"].forEach((sel) => {
+      const a = $(sel);
+      if (a) a.setAttribute("href", "mailto:" + D.email);
+    });
   }
-  const aboutBody = $("#aboutBody");
-  if (aboutBody && D.aboutBody) aboutBody.textContent = D.aboutBody;
-  const clientLogos = $("#clientLogos");
-  if (clientLogos && D.clients) {
-    clientLogos.innerHTML = D.clients.map((c) => `<span>${c}</span>`).join("");
-  }
-  const skillsRow = $("#skillsRow");
-  if (skillsRow && D.skills) {
-    skillsRow.innerHTML = D.skills.map((s) => `<span>${s}</span>`).join("");
+  if (D.instagram) {
+    const instaLink = $("#instaLink");
+    if (instaLink) instaLink.setAttribute("href", D.instagram);
+    const instaText = $("#instaText");
+    if (instaText && D.instagramHandle) instaText.textContent = D.instagramHandle;
   }
 
-  /* ---------- gigs ---------- */
-  const gigsGrid = $("#gigsGrid");
-  if (gigsGrid && D.gigs) {
-    gigsGrid.innerHTML = D.gigs
-      .map(
-        (g) => `
-      <a class="gig-card" href="${D.fiverrUrl}" target="_blank" rel="noopener">
-        <div class="gig-rating"><span class="stars">★</span><strong>${g.rating}</strong><span>(${g.reviews})</span></div>
-        <div class="gig-title">${g.title}</div>
-        <div class="gig-price">
-          <div><span class="from">From</span> <span class="amount">€${g.price}</span></div>
-          <span class="gig-cta">Order now →</span>
-        </div>
-      </a>`
-      )
-      .join("");
+  /* ---------- main featured video ---------- */
+  function playerHTML(v) {
+    if (!v) return "";
+    return v.type === "iframe"
+      ? `<iframe src="${v.url}" title="Main video" allow="autoplay; fullscreen" allowfullscreen></iframe>`
+      : `<video src="${v.url}" controls playsinline></video>`;
+  }
+  const mainPlayer = $("#mainPlayer");
+  if (mainPlayer && D.mainVideo && D.videos) {
+    const v = D.videos[D.mainVideo];
+    mainPlayer.innerHTML = playerHTML(v);
+    const titleEl = $("#mainPlayerTitle");
+    if (titleEl) {
+      const item = (D.work || []).find((w) => w.video === D.mainVideo);
+      titleEl.textContent = item ? item.title : "Main video";
+    }
+    const subEl = $("#mainVideoSub");
+    if (subEl && D.mainVideoSub) subEl.textContent = D.mainVideoSub;
   }
 
-  /* ---------- portfolio ---------- */
+  /* ---------- category tabs ---------- */
+  const cats = [];
+  (D.work || []).forEach((w) => {
+    if (!cats.includes(w.cat)) cats.push(w.cat);
+  });
+  const catTabs = $("#catTabs");
+  if (catTabs && cats.length) {
+    catTabs.innerHTML =
+      `<button class="cat-tab active" data-cat="all" role="tab" aria-selected="true">All</button>` +
+      cats
+        .map(
+          (c) =>
+            `<button class="cat-tab" data-cat="${c}" role="tab" aria-selected="false">${c}</button>`
+        )
+        .join("");
+  }
+
+  /* ---------- portfolio grid ---------- */
   const workGrid = $("#workGrid");
   if (workGrid && D.work) {
     workGrid.innerHTML = D.work
       .map(
         (w) => `
-      <div class="work-card" data-video="${w.video}" data-title="${w.title}" role="button" tabindex="0" aria-label="Play ${w.title}">
+      <div class="work-card" data-video="${w.video}" data-cat="${w.cat}" data-title="${w.title}" role="button" tabindex="0" aria-label="Play ${w.title}">
         <div class="work-thumb">
           <img src="assets/thumbs/${w.video.split("/").pop().replace(".mp4", ".jpg")}" alt="${w.title}" loading="lazy">
           <div class="work-play"><span>▶</span></div>
@@ -67,50 +94,23 @@
       .join("");
   }
 
-  /* ---------- reviews ---------- */
-  const reviewsList = $("#reviewsList");
-  if (reviewsList && D.reviewsList) {
-    reviewsList.innerHTML = D.reviewsList
-      .map(
-        (r) => `
-      <div class="review-card">
-        <div class="review-head">
-          <div class="review-avatar">${r.name.charAt(0)}</div>
-          <div>
-            <div class="review-name">${r.name}${r.repeat ? ' <span class="repeat">Repeat Client</span>' : ""}</div>
-            <div class="review-country">${r.flag} ${r.country}</div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-        </div>
-        <p class="review-text">${r.text}</p>
-        <div class="review-foot">
-          <span>${r.service}</span><span>${r.price}</span><span>${r.duration}</span>
-        </div>
-      </div>`
-      )
-      .join("");
+  /* ---------- category filtering ---------- */
+  function applyFilter(cat) {
+    $$(".work-card").forEach((card) => {
+      const show = cat === "all" || card.dataset.cat === cat;
+      card.classList.toggle("is-hidden", !show);
+    });
   }
-
-  const breakdown = $("#breakdown");
-  if (breakdown && D.ratingBreakdown) {
-    const total = D.ratingBreakdown.reduce((a, b) => a + b.count, 0) || 1;
-    breakdown.innerHTML = D.ratingBreakdown
-      .map(
-        (b) => `
-      <div class="breakdown-row">
-        <span class="b-label">${b.stars}</span>
-        <span class="stars" style="font-size:.8rem">★</span>
-        <div class="b-bar"><i style="width:${Math.round((b.count / total) * 100)}%"></i></div>
-        <span class="b-count">${b.count}</span>
-      </div>`
-      )
-      .join("");
-  }
-  const ratingSub = $("#ratingSub");
-  if (ratingSub && D.ratingSub) {
-    ratingSub.innerHTML = D.ratingSub
-      .map((r) => `<div class="rs-row"><span>${r.label}</span><b>${r.value.toFixed(1)}</b></div>`)
-      .join("");
+  if (catTabs) {
+    catTabs.addEventListener("click", (e) => {
+      const btn = e.target.closest(".cat-tab");
+      if (!btn) return;
+      $$(".cat-tab", catTabs).forEach((t) => {
+        t.classList.toggle("active", t === btn);
+        t.setAttribute("aria-selected", String(t === btn));
+      });
+      applyFilter(btn.dataset.cat);
+    });
   }
 
   /* ---------- mobile menu ---------- */
@@ -159,39 +159,12 @@
     });
   });
 
-  /* ---------- animated counters ---------- */
-  function animateCounter(el) {
-    const target = parseFloat(el.dataset.count || "0");
-    const decimals = parseInt(el.dataset.decimals || "0", 10);
-    if (reduced) {
-      el.textContent = target.toFixed(decimals);
-      return;
-    }
-    const dur = 1400;
-    const start = performance.now();
-    function tick(now) {
-      const p = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (target * eased).toFixed(decimals);
-      if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = target.toFixed(decimals);
-    }
-    requestAnimationFrame(tick);
-  }
-  const counters = $$(".counter");
-  if (counters.length) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((en) => {
-          if (en.isIntersecting) {
-            animateCounter(en.target);
-            io.unobserve(en.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    counters.forEach((c) => io.observe(c));
+  /* ---------- END button: back to top ---------- */
+  const endBtn = $("#endBtn");
+  if (endBtn) {
+    endBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    });
   }
 
   /* ---------- scroll reveal ---------- */
@@ -222,10 +195,7 @@
   function openModal(videoKey, title) {
     const v = D.videos && D.videos[videoKey];
     if (!v || !modal) return;
-    modalPlayer.innerHTML =
-      v.type === "iframe"
-        ? `<iframe src="${v.url}" title="${title}" allow="autoplay; fullscreen" allowfullscreen></iframe>`
-        : `<video src="${v.url}" controls autoplay playsinline></video>`;
+    modalPlayer.innerHTML = playerHTML(v);
     if (modalTitle) modalTitle.textContent = title;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
