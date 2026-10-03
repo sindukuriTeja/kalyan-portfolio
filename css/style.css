@@ -1,5 +1,5 @@
 /* ============================================================
-   KALYAN ARBURI — portfolio
+   KALYAN ABBURI — portfolio
    White / #16c60c accent / #222 ink / #f7f7f7 surfaces
    Figtree body + Montserrat display
    Layout follows the hand-drawn wireframe:
@@ -98,6 +98,14 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.15}
 .main-player-frame{background:#000;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-lg)}
 .main-player-frame iframe,.main-player-frame video{width:100%;height:100%;border:0;display:block}
 .main-player-title{margin-top:.9rem;text-align:center;font:700 1.05rem var(--display);color:var(--ink)}
+
+/* ---------- lazy main player (thumbnail until clicked) ---------- */
+.lazy-play{position:relative;width:100%;height:100%;display:block;background:#000;border:0;padding:0;overflow:hidden}
+.lazy-play img{width:100%;height:100%;object-fit:cover;opacity:.92;transition:transform .5s,opacity .3s}
+.lazy-play:hover img{transform:scale(1.04);opacity:1}
+.lazy-play .play-badge{position:absolute;inset:0;display:grid;place-items:center}
+.lazy-play .play-badge b{width:64px;height:64px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:1.3rem;font-weight:400;padding-left:.15rem;box-shadow:0 6px 20px rgba(0,0,0,.45);transition:transform .25s}
+.lazy-play:hover .play-badge b{transform:scale(1.1)}
 
 /* ---------- portfolio + categories (wireframe bottom) ---------- */
 .portfolio-head{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem}

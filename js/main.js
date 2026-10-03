@@ -2,7 +2,8 @@
    KALYAN ABBURI — portfolio
    Hydrates the DOM from js/data.js and wires up interactions:
    mobile menu, sticky header, scroll reveal, the main featured
-   video, the category filter, and the portfolio video modal.
+   video (lazy-loaded: thumbnail until clicked), the category
+   filter, and the portfolio video modal.
    ============================================================ */
 (function () {
   "use strict";
@@ -16,11 +17,15 @@
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
+  /* ---------- footer tagline ---------- */
+  const footerLine = $("#footerLine");
+  if (footerLine && D.footerLine) footerLine.textContent = D.footerLine;
+
   /* ---------- profile: avatar, bio, contact links ---------- */
   const avatar = $("#avatar");
   if (avatar) {
     if (D.avatarImage) {
-      avatar.innerHTML = `<img src="${D.avatarImage}" alt="${D.name || "Profile"}" onerror="this.remove()">`;
+      avatar.innerHTML = `<img src="${D.avatarImage}" alt="${D.name || "Profile"}" fetchpriority="high" onerror='this.remove();this.parentNode.textContent=${JSON.stringify(D.avatarInitial || "K")}'>`;
     } else if (D.avatarInitial) {
       avatar.textContent = D.avatarInitial;
     }
@@ -54,13 +59,24 @@
       : `<video src="${v.url}" controls playsinline></video>`;
   }
 
-  /* ---------- main featured video ---------- */
+  /* ---------- main featured video (lazy: thumbnail until clicked) ---------- */
   const mainPlayer = $("#mainPlayer");
   if (mainPlayer && D.mainVideo && D.videos) {
     const v = D.videos[D.mainVideo];
-    mainPlayer.innerHTML = playerHTML(v);
+    const thumb = `assets/thumbs/${D.mainVideo.split("/").pop().replace(".mp4", ".jpg")}`;
+    const title = D.mainVideoTitle || "Main video";
+    mainPlayer.innerHTML = `
+      <button class="lazy-play" type="button" aria-label="Play ${title}">
+        <img src="${thumb}" alt="${title}" fetchpriority="high" onerror="this.style.display='none'">
+        <span class="play-badge" aria-hidden="true"><b>&#9654;</b></span>
+      </button>`;
+    mainPlayer.querySelector(".lazy-play").addEventListener("click", () => {
+      mainPlayer.innerHTML = playerHTML(v);
+      const el = mainPlayer.querySelector("iframe, video");
+      if (el) el.focus();
+    });
     const titleEl = $("#mainPlayerTitle");
-    if (titleEl) titleEl.textContent = "Podcast — Task 10";
+    if (titleEl) titleEl.textContent = title;
     const subEl = $("#mainVideoSub");
     if (subEl && D.mainVideoSub) subEl.textContent = D.mainVideoSub;
   }
@@ -90,8 +106,8 @@
         (w) => `
       <div class="work-card" data-video="${w.video}" data-cat="${w.cat}" data-title="${w.title}" role="button" tabindex="0" aria-label="Play ${w.title}">
         <div class="work-thumb">
-          <img src="assets/thumbs/${w.video.split("/").pop().replace(".mp4", ".jpg")}" alt="${w.title}" loading="lazy">
-          <div class="work-play"><span>▶</span></div>
+          <img src="assets/thumbs/${w.video.split("/").pop().replace(".mp4", ".jpg")}" alt="${w.title}" loading="lazy" decoding="async">
+          <div class="work-play"><span>&#9654;</span></div>
         </div>
         <div class="work-meta"><h3>${w.title}</h3><div class="cat">${w.cat}</div></div>
       </div>`
@@ -197,14 +213,18 @@
   const modal = $("#modal");
   const modalPlayer = $("#modalPlayer");
   const modalTitle = $("#modalTitle");
+  const closeBtn = $(".modal__close");
+  let lastFocused = null;
   function openModal(videoKey, title) {
     const v = D.videos && D.videos[videoKey];
     if (!v || !modal) return;
+    lastFocused = document.activeElement;
     modalPlayer.innerHTML = playerHTML(v);
     if (modalTitle) modalTitle.textContent = title;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+    if (closeBtn) closeBtn.focus();
   }
   function closeModal() {
     if (!modal) return;
@@ -212,6 +232,7 @@
     modal.setAttribute("aria-hidden", "true");
     modalPlayer.innerHTML = "";
     document.body.style.overflow = "";
+    if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
   }
   $$(".work-card").forEach((card) => {
     const open = () => openModal(card.dataset.video, card.dataset.title);
@@ -224,10 +245,26 @@
     });
   });
   const backdrop = $(".modal__backdrop");
-  const closeBtn = $(".modal__close");
   if (backdrop) backdrop.addEventListener("click", closeModal);
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal && modal.classList.contains("open")) closeModal();
   });
+  /* keep Tab focus inside the modal while it is open */
+  if (modal) {
+    modal.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab" || !modal.classList.contains("open")) return;
+      const focusables = $$(".modal__close, .modal__backdrop, .modal iframe, .modal video", modal);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+  }
 })();
